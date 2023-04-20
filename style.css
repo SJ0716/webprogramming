@@ -1,0 +1,19 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Roboto:wght@100&display=swap');
+    *{font-family: 'Dongle', sans-serif;}
+
+.fonttest1{color:blue; text-decoration : underline;}
+.fonttest2{direction: rtl;} 
+.fonttest3{letter-spacing: -0.1ch;}
+.fonttest4{line-height: 8ch;}
+.fonttest5{text-align: center;}
+.fonttest6{text-decoration: underline; text-decoration-color: brown; text-decoration-thickness: 5px;}
+.fonttest7{text-indent: 2ch;}
+.fonttest8{text-shadow: 1px 1px 1px rgb(36, 34, 34);}
+.fonttest9{text-transform: capitalize;}
+
+h1:hover::after{
+
+    text-decoration: underline;
+    transition: 0.7s;
+}
