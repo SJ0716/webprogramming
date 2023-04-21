@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grid</title>
+  </head>
+  <style>
+    body{
+        background-color: black;
+    }
+    .container {
+      display: grid;
+      width:500px;
+      height:500px;
+      /* grid-template-rows: 100px 100px 100px 100px; */
+      grid-template-columns: repeat(3, 1fr);
+      gap:20px;
+      grid-template-areas: 
+        "a a b"
+        "c e e"
+        "d e e"
+;
+    }
+    
+    .a{ grid-area: a}
+    .b {grid-area: b}
+    .c{ grid-area: c}
+    .d{ grid-area: d}
+    .e{ grid-area: e}
+
+    .items {
+      background-color: green;
+      border: 4px solid yellow;
+      display: flex;
+      justify-content: center;
+       align-items: center;
+       color: white;
+       font-size: 15px; 
+
+    }
+ 
+    
+  </style>
+  <body>
+    <div class="container">
+      <div class="items a">a</div>
+      <div class="items b">b</div>
+      <div class="items c">c</div>
+      <div class="items d">d</div>
+      <div class="items e">e</div>
+    </div>  
+
+  </body>
+</html>
+<!-- grid-row-start, grid-column-start, grid-row-end, grid-column-end -->

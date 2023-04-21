@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      :root {
+        --background: #rgb(226, 231, 237);
+        --fontSize: 13px;
+        --color: black;
+      }
+      body {
+        background-color: var(--background);
+        font-size: var(--fontSize);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        color: var(--color);
+      }
+      @media (prefers-color-scheme:dark) {
+        :root {
+          --background: #0c0f0d;
+          --color: white;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    이건 font1 변수의 값이 사용된 텍스트에요!
+  </body>
+</html>
