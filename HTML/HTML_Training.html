@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    p{
+        width: 100px;
+        height: 50px;
+        border: 1px solid black;
+        background-color: darkseagreen;
+        transition: width 3s, height 3s, border 5s;
+    
+        display: flex;
+        justify-content: center;
+    }
+    p:hover{
+        width: 200px;
+        height: 100px;
+        border: 10px solid red;
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+    }
+    .n1{
+        margin: 10px;
+    }
+    .n2{
+        margin: 20px;
+    }
+    .n3{
+        margin: 30px;
+    }
+    div{
+        width: 100%;
+        height: 50px;
+        border: 1px solid black;
+        background-color: yellow;
+        display: flex;
+        align-items: center;
+      
+    }
+ 
+    div:nth-child(odd){
+            background-color: blue;
+        
+            transition: width 3s, height 4s;
+
+        }
+        #box2:hover{
+            width: 100px ;
+            height: 100px;
+        }
+        div#box3{
+            background-color: red;
+           
+        }
+        div#box4{
+            background-color: green;
+         
+           
+        }
+       
+
+       
+</style>
+<body>
+    <p class="n1">여기가 박스입니다.</p>
+    <p class="n2">여기가 박스입니다.</p>
+    <p class="n3">여기가 박스입니다.</p>
+
+   <div id="box1">Box1</div>
+   <div id="box2">Box2</div>
+   <div id="box3">Box3</div>
+   <div id="box4">Box4</div>
+   <div id="box5">Box5</div>
+   <div id="box6">Box6</div>
+   <div id="box7">Box7</div>
+   <div id="box8">Box8</div>
+</body>
+</html>
