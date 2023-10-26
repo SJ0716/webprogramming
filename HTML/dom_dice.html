@@ -1,35 +1,69 @@
 <html>
-
 <head>
     <title>주사위 굴리기</title>
     <style>
         * {
             font-family: 굴림, sans-serif;
             text-align: center;
+            background-color: azure;
         }
 
-        #dice {
+        .dice {
             height: 100px;
             width: 100px;
             margin: 10px auto;
-            background-color: yellow;
             border: 1px solid gray;
             border-radius: 10px;
             font-size: 100px;
+            padding: 15px;
+            text-align: center;
+           
+        }
+
+        
+        .equal {
+            background-color: aqua;
+        }
+
+        button {
+            font-size: 20px;
+            font-weight: bolder;
+            border: none;
+            background-color: cornflowerblue;
+            color: black;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            border-radius: 30%;
         }
     </style>
     <script>
         function roll() {
+         
             let a = Math.floor(Math.random() * 6) + 1;
-            document.getElementById("dice").innerHTML = a;
-        };
+            let firstDice = document.querySelector(".dice:first-of-type");
+            firstDice.innerHTML = a;
+
+            
+            let b = Math.floor(Math.random() * 6) + 1;
+            let secondDice = document.querySelector(".dice:last-of-type");
+            secondDice.innerHTML = b;
+
+            
+            if (a === b) {
+                firstDice.classList.add("equal");
+                secondDice.classList.add("equal");
+            } else {
+                
+                firstDice.classList.remove("equal");
+                secondDice.classList.remove("equal");
+            }
+        }
     </script>
 </head>
 
 <body>
     <h3>주사위 굴리기 게임입니다.</h3>
-    <p id="dice"> </p>
+    <p class="dice"> </p>
+    <p class="dice"> </p>
     <button onclick="roll()">주사위 굴리기</button>
 </body>
-
 </html>
