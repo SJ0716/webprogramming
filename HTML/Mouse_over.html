@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        .box1 {
-            width: 15vw;
-            height: 100px;
-            background-color: yellow;
-        }
-
+      .box1 {
+        width: 15vw;
+        height: 100px;
+        background-color: yellow;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="box1" id="box">
-        <p class="text">마우스를 올려주세요!</p>
+      <p class="text" id="innerText">마우스를 올려주세요!</p>
     </div>
 
     <p id="result">결과가 여기에 나타납니다.</p>
 
     <script>
-        const box = document.getElementById('box');
-        const result = document.getElementById('result');
+      const text1 = "마우스를 올려주세요!";
+      const text2 = "감사합니다!";
+      const box = document.getElementById("box");
+      const innerText = document.getElementById("innerText");
 
-        box.addEventListener('mouseover', () => {
-            result.innerHTML = "감사합니다.";
-        });
+      box.addEventListener("mouseover", () => {
+        innerText.innerHTML = `${text2}`;
+      });
+      box.addEventListener("mouseout", () => {
+        innerText.innerHTML = `${text1}`;
+      });
     </script>
-</body>
+  </body>
 </html>
