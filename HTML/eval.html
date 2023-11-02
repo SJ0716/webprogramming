@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math Quiz</title>
+  </head>
+  <style>
+    .problem-group {
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: #f0f0f0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .problem-group input[type="text"] {
+      width: 60%;
+      padding: 5px;
+      margin-right: 10px;
+    }
+
+    .problem-group button {
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    let problems = ["12*2+20-30"]; // 초기 문제 배열
+
+    function cal() {
+      let answer = document.getElementById("answer").value;
+      let s = document.getElementById("problem").value;
+      let solution = eval(s);
+      if (answer == solution) {
+        alert("정답입니다!");
+      } else {
+        alert(`틀렸습니다! 정답은 ${solution}`);
+      }
+    }
+
+    function add() {
+      // 새로운 문제 추가
+      const newProblem = prompt("새로운 문제를 입력하세요.");
+      if (newProblem) {
+        problems.push(newProblem);
+        createProblemInput(newProblem);
+      }
+    }
+
+    function createProblemInput(problem) {
+      const problemGroup = document.createElement("div"); // 새로운 문제를 감싸는 div 요소
+      problemGroup.classList.add("problem-group");
+      const problemInput = document.createElement("input");
+      problemInput.type = "text";
+      problemInput.value = problem;
+      problemInput.readOnly = true; // 새로운 문제는 편집 불가능
+
+      const answerInput = document.createElement("input");
+      answerInput.type = "text";
+
+      const button = document.createElement("button");
+      button.textContent = "정답 알아보기";
+      button.onclick = () => {
+        let answer = answerInput.value;
+        let solution = eval(problem);
+        if (answer == solution) {
+          alert("정답입니다!");
+        } else {
+          alert(`틀렸습니다! 정답은 ${solution}`);
+        }
+      };
+
+      problemGroup.appendChild(problemInput);
+      problemGroup.appendChild(answerInput);
+      problemGroup.appendChild(button);
+
+      document.body.appendChild(problemGroup);
+      document.body.appendChild(document.createElement("br"));
+    }
+
+    for (let i = 0; i < problems.length; i++) {
+      createProblemInput(problems[i]);
+    }
+  </script>
+  <body>
+    <h1>Math Quiz</h1>
+
+    <button onclick="add()">문제 추가하기</button>
+  </body>
+</html>
