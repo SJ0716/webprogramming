@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p>숫자를 입력하시오.</p>
+    <input id="test" type="text" />
+    <script>
+      function func() {
+        var n = document.getElementById("test").value;
+        if (isNaN(n)) {
+          alert("숫자가 아닙니다.");
+        } else {
+          let num = n % 2 == 0 ? "짝수" : "홀수";
+          alert(`숫자 ${n} 를/을 입력했습니다! ${n} 는/은 ${num} 입니다.`);
+        }
+      }
+    </script>
+    <button type="button" onclick="func()">입력완료</button>
+  </body>
+</html>
