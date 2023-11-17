@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <canvas id="myCanvas" width="300" height="200"></canvas>
+    <script>
+      let canvas = document.getElementById("myCanvas");
+      let context = canvas.getContext("2d");
+
+      // First orange triangle
+      context.fillStyle = "orange";
+      context.beginPath();
+      context.moveTo(100, 25);
+      context.lineTo(30, 100);
+      context.lineTo(150, 100);
+      context.fill();
+
+      // Second triangle (outlined)
+      context.beginPath();
+      context.moveTo(200, 25);
+      context.lineTo(130, 100);
+      context.lineTo(250, 100);
+      context.closePath();
+      context.stroke();
+
+      // Third green triangle
+      context.fillStyle = "green";
+      context.beginPath();
+      context.moveTo(50, 150);
+      context.lineTo(20, 200);
+      context.lineTo(80, 200);
+      context.fill();
+
+      // Fourth triangle, same size as the third, placed next to it
+      context.beginPath();
+      context.moveTo(90, 150); // Adjusted to place next to the third triangle
+      context.lineTo(60, 200);
+      context.lineTo(120, 200);
+      context.fill(); // Uses the same green color as the third triangle
+    </script>
+  </body>
+</html>

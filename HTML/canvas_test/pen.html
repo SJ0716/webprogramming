@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <canvas
+      id="myCanvas"
+      width="300"
+      height="200"
+      style="border: 1px dotted red"
+    ></canvas>
+    <script>
+      let canvas = document.getElementById("myCanvas");
+      let context = canvas.getContext("2d");
+
+      // First emoticon
+      context.beginPath();
+      context.arc(100, 100, 50, 0, Math.PI * 2, true); // Face
+      context.moveTo(120, 130);
+      context.arc(100, 130, 20, 0, Math.PI, true); // Mouth
+      context.moveTo(90, 80);
+      context.arc(80, 80, 10, 0, Math.PI * 2, true); // Left eye
+      context.moveTo(130, 80);
+      context.arc(120, 80, 10, 0, Math.PI * 2, true); // Right eye
+      context.stroke();
+
+      // Second emoticon with a different expression
+      context.beginPath();
+      context.arc(200, 100, 50, 0, Math.PI * 2, true); // Face
+      context.moveTo(220, 120);
+      context.arc(200, 120, 20, 0, Math.PI, false); // Smiling mouth
+      context.moveTo(190, 90);
+      context.arc(180, 90, 10, 0, Math.PI * 2, true); // Left eye
+      context.moveTo(230, 90);
+      context.arc(220, 90, 10, 0, Math.PI * 2, true); // Right eye
+      context.stroke();
+    </script>
+  </body>
+</html>

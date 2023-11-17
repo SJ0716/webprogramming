@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <canvas
+      id="myCanvas"
+      width="300"
+      height="200"
+      style="border: 1px dotted red"
+    ></canvas>
+    <script>
+      let canvas = document.getElementById("myCanvas");
+      let context = canvas.getContext("2d");
+
+      // First triangle
+      context.beginPath();
+      context.moveTo(80, 80);
+      context.lineTo(50, 120);
+      context.lineTo(150, 120);
+      context.fillStyle = "aqua";
+      context.fill();
+
+      // Second smaller triangle inside the first one
+      context.beginPath();
+      context.moveTo(80, 100); // Adjusted starting point for the smaller triangle
+      context.lineTo(65, 120); // Adjusted second point
+      context.lineTo(95, 120); // Adjusted third point
+      context.fillStyle = "blue"; // Different fill color for the new triangle
+      context.fill();
+    </script>
+  </body>
+</html>
