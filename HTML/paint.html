@@ -2,7 +2,7 @@
 <html>
   <style>
     #myCanvas {
-      border: 1px dotted blueviolet;
+      border: 1px dotted blue;
     }
   </style>
   <body>
@@ -13,16 +13,21 @@
     </select>
     <br />
 
+    <!-- 펜 색상 선택 옵션 -->
     <label for="penColor">펜 색상:</label>
     <input type="color" id="penColor" value="#000000" />
     <br />
 
+    <!-- 펜 굵기 조절 슬라이더 -->
     <label for="penWidth">펜 굵기:</label>
     <input type="range" id="penWidth" min="1" max="10" value="1" />
     <br />
 
+    <!-- 화면 지우기 버튼 -->
     <button onclick="clearCanvas();">화면 지우기</button>
     <br />
+
+    <!-- 캔버스 요소 -->
     <canvas id="myCanvas" width="600" height="400"></canvas>
 
     <script>
@@ -33,17 +38,20 @@
       let penWidth = document.getElementById("penWidth");
 
       let last_x = 0,
-        last_y = 0;
-      let draw_mode = false;
+        last_y = 0; // 마지막 위치를 저장하는 변수
+      let draw_mode = false; // 그리기 모드 상태를 저장하는 변수
 
+      // 배경색 변경 이벤트 리스너
       bgColor.addEventListener("change", function () {
         canvas.style.backgroundColor = bgColor.value;
       });
 
+      // 화면 지우기 함수
       function clearCanvas() {
         context.clearRect(0, 0, canvas.width, canvas.height);
       }
 
+      // 마우스 움직임에 따른 그리기 이벤트
       canvas.addEventListener("mousemove", function (event) {
         if (!draw_mode) return;
         let x = event.offsetX;
@@ -56,6 +64,7 @@
         last_y = y;
       });
 
+      // 마우스를 누를 때 이벤트
       canvas.addEventListener("mousedown", function (event) {
         last_x = event.offsetX;
         last_y = event.offsetY;
@@ -64,10 +73,10 @@
         draw_mode = true;
       });
 
+      // 마우스를 뗄 때와 캔버스 밖으로 나갈 때 이벤트
       canvas.addEventListener("mouseup", function (event) {
         draw_mode = false;
       });
-
       canvas.addEventListener("mouseout", function (event) {
         draw_mode = false;
       });
